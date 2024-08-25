@@ -23,6 +23,8 @@ app.listen(process.env.PORT,() => {
 })
 
 app.use(cors({
-  origin: 'https://tranquil-custard-a7c975.netlify.app/', // Replace with your Netlify domain
+  origin: 'https://friendly-biscotti-f4f84f.netlify.app/', // Replace with your Netlify domain
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
+  allowedHeaders: 'Content-Type,Authorization',
 }));
