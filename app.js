@@ -22,9 +22,10 @@ app.listen(process.env.PORT,() => {
     console.log(`Server Started at port ${process.env.PORT}`);
 })
 
-app.use(cors({
-  origin: 'https://friendly-biscotti-f4f84f.netlify.app/', // Replace with your Netlify domain
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true,
-  allowedHeaders: 'Content-Type,Authorization',
-}));
+fetch('https://todobyammar-9.onrender.com/api/v1/signin', {
+    mode: 'cors',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+
