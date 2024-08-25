@@ -22,10 +22,14 @@ app.listen(process.env.PORT,() => {
     console.log(`Server Started at port ${process.env.PORT}`);
 })
 
-fetch('https://todobyammar-9.onrender.com/api/v1/signin', {
-    mode: 'cors',
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  })
 
+fetch('https://todobyammar-9.onrender.com/api/v1/signin', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ username: 'user', password: 'pass' })
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
