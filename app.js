@@ -21,7 +21,7 @@ app.use("/api/v2",list);
 app.listen(process.env.PORT,() => {
     console.log(`Server Started at port ${process.env.PORT}`);
 })
-const cors = require('cors');
+
 app.use(cors({
   origin: 'https://tranquil-custard-a7c975.netlify.app/', // Replace with your Netlify domain
   credentials: true,
